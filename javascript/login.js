@@ -14,15 +14,35 @@ const login = document.getElementsByClassName("login")[0]
 login.addEventListener("click" , sumbit)
 
   function  sumbit (){
+    if(email.value == ""){
+        document.querySelector(".errEmail").style.display = "block"
+        document.querySelector(".errEmail").innerHTML = "Email est obligatoire" 
+         return;
+        }else if(!email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,3}$/)){
+          document.querySelector(".errEmail").style.display = "block"
+          document.querySelector(".errEmail").innerHTML = "Email invalide"
+          return;
+      }else{
+        document.querySelector(".errEmail").style.display = "none"
+      }
+        
+      if(password.value == ""){
+        document.querySelector(".errPassword").style.display = "block"
+        document.querySelector(".errPassword").innerHTML = "Mot de passe est obligatoire" 
+         return;
+        }else{
+        document.querySelector(".errPassword").style.display = "none"
+    }
+    
     const auth =  JSON.parse(localStorage.getItem("auth"))
     if(auth){
         const verifParEmail = auth.find(item => item.email == emailUser)
         console.log(verifParEmail)
         if(!verifParEmail ){
-           alert("passwor or email incorrect")
+           alert("Vous n'étes pas enregestré")
            return;
         }else if(verifParEmail.password != passwordUser){
-            alert("passwor or email incorrect")
+            alert("password or email incorrect")
             return;
         }
         if(verifParEmail.role == "prof"){
@@ -33,7 +53,7 @@ login.addEventListener("click" , sumbit)
             localStorage.setItem("login" , JSON.stringify(verifParEmail))
         }
        }else{
-        alert("passwor or email incorrect")   
+        alert("Vous n'étes pas enregestré")   
         return;
     }
   }

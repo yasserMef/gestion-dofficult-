@@ -3,46 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/addBrief.css">
+    <link rel="stylesheet" href="../style/editBrief.css">
     <title>edit brief</title>
 </head>
 <body>
+    <nav>
+        <div class="nav-cont">
+         <img src="../images/CASA SCHOOL(1).png" alt="logo"  class="logo"  />
+         <div class="dropdown">
+         <img src="../images/photo-profil-avatar-homme-illustration-vectorielle_268834-538.avif" alt="profil" width="50px" height="50px" class="profil" />
+         <div>
+            <h3 class="disconnect">Déconnexion</h3>
+         </div>
+        </div>
+            
+          </div>
+        </nav>
+        <main>
     <div class="container">
         <div class="title">
             <h1>Editer</h1>
         </div>
     <div class="secInput">
-    <div >
-    <h1>fomateur</h1> 
-    <select class="nameFotmateur">
-        <option value="houssam">houssam</option>
-        <option value="hamid">hamid</option>
-    </select>
-    </div>
-    <div>
-    <h1>Bootcam</h1> 
-    <select class="bootcam">
-        <option value="MERN">MERN</option>
-        <option value="Angular">Angular</option>
-    </select>
-    </div>
     <div>
         <h1>titre</h1> 
         <input type="text" class="titre">
+        <p class="errTitre"></p>
     </div>
     <div>
         <h1>brief</h1> 
         <input type="text" class="brief">
+        <p class="errBrief"></p>
     </div>   
     <div>
         <h1>la difficulté rencontreé</h1> 
-        <textarea type="text" class="diffuclte"></textarea>
+        <textarea type="text" class="diffuclte" ></textarea>
+        <p class="errDifficult"></p>
     </div> 
    </div>
     <div class="btn">
     <button class="edit">Editer</button>
     </div>
    </div>
+    </main>
+    
+    <footer>
+        <h3>Copyright 2024 © CasaSchool.com - Tous droits réservés.</h3>
+     </footer>
+    
+    
     <script src="../javascript/editBrief.js">
 
     </script>

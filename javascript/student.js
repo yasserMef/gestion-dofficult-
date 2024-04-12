@@ -8,12 +8,12 @@
     console.log(briefs)
     const briefsFilter = briefs.filter(item=>(item.email == infoUser.email && item.role =="student"))
     tab.innerHTML = briefsFilter.map(item =>
-                (`<tr><td>${infoUser.name}</td>
-             <td>${item.dateCreation}</td>
-             <td><i class="fa-solid fa-eye"  id="openPopup" onClick=showData(${item.id})></i></td>
-             <td><i ${item.isValid==false ?'class="fa-solid fa-square-xmark"':'class="fa-solid fa-square-check"'}></i></td>
-             <td><i ${item.isDisabled == false ?'class="fa-solid fa-pen-to-square"':'class="fa-solid fa-pen-to-square disabledIcon"'} onClick=editData(${item.id})></i></td>
-             <td><i ${item.isDisabled == false?'class="fa-solid fa-trash"':'class="fa-solid fa-trash disabledIcon"'} onClick=deleteOne(${item.id})></i></td></tr>`)).join("")
+                (`
+             <td data-label ="Date">${item.dateCreation}</td>
+             <td data-label ="difficulté"><i class="fa-solid fa-eye"  id="openPopup" onClick=showData(${item.id})></i></td>
+             <td data-label ="validé"><i ${item.isValid==false ?'class="fa-solid fa-square-xmark"':'class="fa-solid fa-square-check"'}></i></td>
+             <td data-label ="modifier"><i ${item.isDisabled == false ?'class="fa-solid fa-pen-to-square"':'class="fa-solid fa-pen-to-square disabledIcon"'} onClick=editData(${item.id})></i></td>
+             <td data-label ="supprimé"><i ${item.isDisabled == false?'class="fa-solid fa-trash"':'class="fa-solid fa-trash disabledIcon"'} onClick=deleteOne(${item.id})></i></td></tr>`)).join("")
     }
   
 if(infoUser){
@@ -25,7 +25,24 @@ if(infoUser){
  const showData = (x) =>{
     console.log(x)
     getBriefOne =   briefs.find(item=> item.id == x)
-    document.getElementById("titre").innerHTML = `${getBriefOne.titre}`
+    document.getElementById("method").innerHTML = `${getBriefOne.typeModel}`
+    document.getElementById("solution").innerHTML = `${getBriefOne.modal}`
+    if( getBriefOne.modal == "" || getBriefOne.typeModel=="" || getBriefOne.modal == undefined ||getBriefOne.typeModel==undefined ){
+      document.getElementById("titre").innerHTML = `${getBriefOne.titre}`
+      document.getElementById("bootcam").innerHTML = `${getBriefOne.bootcam}`
+      document.getElementById("brief").innerHTML = `${getBriefOne.brief}`
+      document.getElementById("description").innerHTML = `${getBriefOne.difficult}`
+      document.getElementById("method").parentElement.style.display ="none"
+      document.getElementById("solution").parentElement.style.display = "none"
+     }else{
+     console.log(getBriefOne.modal)
+      document.getElementById("titre").innerHTML = `${getBriefOne.titre}`
+      document.getElementById("bootcam").innerHTML = `${getBriefOne.bootcam}`
+      document.getElementById("brief").innerHTML = `${getBriefOne.brief}`
+      document.getElementById("description").innerHTML = `${getBriefOne.difficult}`
+      document.getElementById("method").parentElement.style.display ="block"
+      document.getElementById("solution").parentElement.style.display = "block"
+    }
     }
     
     const editData = (x)=>{
@@ -60,3 +77,22 @@ if(infoUser){
 
     // Event listener for closing the popup
     document.getElementById("closePopup").addEventListener("click", closePopup);
+
+    
+    let profilDropdown = false
+    document.querySelector(".profil").addEventListener('click' , dropdownEvent)
+    
+    function dropdownEvent (){
+         profilDropdown = !profilDropdown
+         if(profilDropdown){
+            document.querySelector(".disconnect").style.visibility = "visible"
+         }else{
+            document.querySelector(".disconnect").style.visibility = "hidden"
+         }
+    }
+
+    document.querySelector(".disconnect").addEventListener('click' , deconnectApp)
+    function deconnectApp(){
+        localStorage.removeItem("login")
+        window.location.href = "login.html"
+    }

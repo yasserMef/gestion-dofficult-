@@ -3,19 +3,60 @@
     margin: 0;
     box-sizing: border-box;
 }
-nav{
-    width: 100%;
-    height: 40px;
-    background-color: blue;
-    top: 0;
-    left: 0;
-    position: fixed;
+html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     
-   }
+}
+.logo{
+    background-color: white;
+    max-width: 200px;
+    
+ }
+ nav{
+     box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+     width: 100%;
+     position: fixed;
+     height: 200px;
+     top: 0px;
+     left: 0;
+     height: 100px;
+     background-color: white;
+     z-index: 1;
+ }
+ .nav-cont{
+     width: 80%;
+     height: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: auto;
+     
+ }
+    .dropdown{
+     text-align: center;
+     width: 100px;
+     height: 100%;
+     display:flex ;
+     flex-direction: column;
+     align-items: center;
+     justify-content: end;
+     }
+     .dropdown img , h3{
+         cursor: pointer;
+     }
+     .dropdown h3{
+         visibility: hidden;
+         background-color:antiquewhite;
+     }
    main{
     margin: auto;
     width: 80%;
-    margin-top: 100px;
+    margin-top: 120px;
    }
    .title{
     margin-bottom: 20px;
@@ -74,6 +115,83 @@ table tbody tr:nth-child(even) {
   margin-right: 10px;
 }
 
+textarea{
+    width: 80%;
+    height: 100px;
+    background-color: #a9927d;
+    color: white;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+textarea::placeholder{
+    color: white;
+}
+   button{
+    font-size: 24px;
+    font-weight: 700;
+    width: 50%;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 8px;
+    background-color:  #CE0033;
+    color: white;
+    cursor: pointer;
+}
+.container{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   }
+   .btn{
+    display: flex;
+    justify-content: center;
+}
+.titleModel{
+    background-color: #CE0033;
+    text-align: center;
+    color: white;
+    padding-block: 5px;
+}
+#description{
+    word-wrap: break-word;
+}
+.fa-square-check{
+    color: green;
+}
+#solution{
+    word-wrap: break-word;
+}
+
+.secInput div{
+   margin-bottom: 15px;
+}
+.container1{
+    width: 400px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.container1 h2{
+  color: #6E6A69;
+}
+
+.container1 h2 span{
+    color: black;
+    font-size: 14px;
+}
+.errSolution{
+    display: none;
+    color: red;
+    margin-top: 10px;
+}
+
 /* Styles for the popup */
 .popup , .popupModel {
     display: none;
@@ -86,4 +204,111 @@ table tbody tr:nth-child(even) {
     border: 1px solid #000000;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
     z-index: 9999;
+}
+footer{
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    margin-top: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media screen and (max-height: 600px){
+    main{
+        margin-top: 100px;
+    }
+    .container1 , .container{
+        height: 330px;
+        
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main{
+        margin-top: 120px;
+    }
+    nav{
+        width: 100%;
+        height: 100px;
+    }
+    .logo{
+        max-width: 120px;
+    }
+    .title{
+        font-size: 15px;
+    }
+    
+    .title p{
+        text-align: start;
+        
+       }
+    .subTitle{
+        text-align: start;
+        }
+    table{
+        background-color: white;
+    }
+    table , tr , td , th  ,tbody {
+        display: block;
+       text-align: center;
+       
+    }
+    thead{
+        display: none;
+    }
+    
+  table tr  td{
+      padding-left: 170px; 
+      position: relative;
+      margin-top: -2px;
+      border-top:  2px solid rgba(109, 176, 231, 0.8);
+      }
+      table tr  td:first-child{
+        border-top: none;
+      }
+     table tbody td:nth-child(even) {
+        background: #A7C4B5;
+        
+    }
+    table tbody td:nth-child(odd) {
+        background: #D9D9D9;
+    }
+
+     
+     table tr  td::before{
+        content: attr(data-label);
+        top: 0;
+        left: 0;
+        width: 130px;
+        position: absolute;
+        bottom: 0;
+        background-color: #CE0033;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        letter-spacing: 1px;
+        font-size: 24px;
+        font-weight: 700;
+        }
+        tr{
+            margin-bottom: 1.5rem;
+        }
+        .popup , .popupModel{
+            width: 90%;
+        }
+        .container1 , .container{
+            width: 100%;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        footer h3{
+            font-size: 15px;
+        }
 }

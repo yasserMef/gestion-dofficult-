@@ -15,14 +15,10 @@ body{
     justify-content: center;
     align-items: center;
 }
-nav{
- width: 100%;
- height: 40px;
- background-color: blue;
- top: 0;
- left: 0;
- position: fixed;
+.cont img{
+    margin-bottom: 30px;
 }
+
 .container{
      width: 400px;
      height: 400px;
@@ -41,13 +37,13 @@ nav{
     padding-block: 5px;
 }
 .secInput{
-    margin-left: 20px;
+    margin-left: 40px;
 }
 input{
     width: 80%;
     height: 30px;
     margin-top: 5px;
-    background-color: #6E6A69;
+    background-color: #a9927d;
     border: none;
     padding-left: 10px;
     color: white;
@@ -84,3 +80,28 @@ button{
     text-decoration: none;
 }
 
+.errEmail , .errPassword{
+    display: none;
+    color: red;
+    margin-top: 10px;
+}
+
+
+@media screen and (max-height: 600px){
+    .cont{
+        height: 90%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .cont{
+       width: 95%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    }
+    .container{
+        width: 100%;
+    }
+}

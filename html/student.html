@@ -9,7 +9,16 @@
 </head>
 <body>
     <nav>
-
+    <div class="nav-cont">
+     <img src="../images/CASA SCHOOL(1).png" alt="logo"  class="logo"  />
+     <div class="dropdown">
+     <img src="../images/photo-profil-avatar-homme-illustration-vectorielle_268834-538.avif" alt="profil" width="50px" height="50px" class="profil" />
+     <div>
+        <h3 class="disconnect">Déconnexion</h3>
+     </div>
+    </div>
+        
+      </div>
     </nav>
     <main>
     <div class="title">
@@ -22,7 +31,6 @@
     <table>
         <thead>
            <tr>
-            <th>Nom</th>
             <th>Date de creation</th>
             <th>difficulté</th>
             <th>validé</th>
@@ -38,11 +46,25 @@
    <a href="addBrief.html">Ajouté difficulté</a>
    </div>
 </main>
-    <div class="popup" id="popup">
-        <h2 id="titre"></h2>
-        <p></p>
-        <button id="closePopup">Close</button>
+<footer>
+    <h3>Copyright 2024 © CasaSchool.com - Tous droits réservés.</h3>
+</footer>
+<div class="popup" id="popup">
+    <div class="container1">
+    <div class="titleModel">
+        <h1>Détails</h1>
     </div>
+    <h2 >Bootcam : <span id="bootcam"></span></h2>
+    <h2 >Titre : <span id="titre"></span></h2>
+    <h2 >Brief : <span id="brief"></span></h2>
+    <h2>Difficulté : <span id="description"></span> </h2>
+    <h2 >Methode : <span id="method"></span></h2>
+    <h2 >Solution : <span id="solution"></span></h2>
+    <div class="btn">
+    <button id="closePopup">Fermé</button>
+    </div>
+</div>
+</div>
     
 </body>
 <script src="../javascript/student.js">

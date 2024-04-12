@@ -9,8 +9,17 @@
 </head>
 <body>
     <nav>
-
-    </nav>
+        <div class="nav-cont">
+         <img src="../images/CASA SCHOOL(1).png" alt="logo"  class="logo"  />
+         <div class="dropdown">
+         <img src="../images/photo-profil-avatar-homme-illustration-vectorielle_268834-538.avif" alt="profil" width="50px" height="50px" class="profil" />
+         <div>
+            <h3 class="disconnect">Déconnexion</h3>
+         </div>
+        </div>
+            
+          </div>
+        </nav>
     <main>
     <div class="title">
         <h1>Formateur Dashboard</h1>
@@ -24,9 +33,9 @@
            <tr>
             <th>Nom</th>
             <th>Date de creation</th>
-            <th>difficulté</th>
-            <th>validé</th>
-            <th>models</th>
+            <th>Difficulté</th>
+            <th>Validé</th>
+            <th>Solution</th>
         </tr>
         </thead>
         <tbody class="tab">
@@ -37,28 +46,56 @@
     </table>
     
 </main>
+ <footer>
+    <h3>Copyright 2024 © CasaSchool.com - Tous droits réservés.</h3>
+ </footer>
+
     <div class="popup" id="popup">
-        <h2 id="titre"></h2>
-        <p></p>
-        <button id="closePopup">Close</button>
+        <div class="container1">
+        <div class="titleModel">
+            <h1>Détails</h1>
+        </div>
+        <h2 >Bootcam : <span id="bootcam"></span></h2>
+        <h2 >Titre : <span id="titre"></span></h2>
+        <h2 >Brief : <span id="brief"></span></h2>
+        <h2>Difficulté : <span id="description"> </span> </h2>
+        <h2 >Methode : <span id="method"></span></h2>
+        
+        <h2 >Solution : <span id="solution"></span></h2>
+        
+        <div class="btn">
+        <button id="closePopup">Fermé</button>
+        </div>
     </div>
+    </div>
+    
+    
+    
     <div class="popupModel" id="popupModel">
-        <div>
-           <input type="radio" checked name="radio1" id="radio" value="Encadré dans leurs recherches de solutions"> <label for="radio1" id="radio1">Encadré dans leurs recherches de solutions</label>
+        <div class="container">
+            <div class="titleModel">
+                <h1>Solution</h1>
+            </div>
+        <div class="secInput">
+            <div>
+                <input type="radio" checked name="radio1" id="radio" value="Encadré dans leurs recherches de solutions"> <label for="radio1" id="radio1">Encadré dans leurs recherches de solutions</label>
+             </div>
+             <div>
+                 <input type="radio" name="radio1" id="radio" value="Aidé par leurs pairs"> <label for="radio1" id="radio1">Aidé par leurs pairs</label>
+             </div>
+             <div>
+                 <input type="radio" name="radio1" id="radio" value="Intervention directe de formateur"> <label for="radio1" id="radio1">Intervention directe de formateur</label>
+             </div>
+              <div>
+                 <textarea type="text" class="solution" placeholder="Solution"></textarea>
+                 <p class="errSolution"></p>
+              </div>
+       </div>
+        <div class="btn">
+            <button class="btnModel " id="closePopupModel">valide</button>
+            
         </div>
-        <div>
-            <input type="radio" name="radio1" id="radio" value="Aidé par leurs pairs"> <label for="radio1" id="radio1">Aidé par leurs pairs</label>
-        </div>
-        <div>
-            <input type="radio" name="radio1" id="radio" value="Intervention directe de formateur"> <label for="radio1" id="radio1">Intervention directe de formateur</label>
-        </div>
-         <div>
-            <input type="text" name="" id="">
-         </div>
-        <div >
-        <button class="btnModel" id="closePopupModel">valid</button>
-        </div>  
-         
+       </div>
     </div>
 </body>
 <script src="../javascript/prof.js">

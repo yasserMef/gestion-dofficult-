@@ -7,6 +7,19 @@
     <title>add brief</title>
 </head>
 <body>
+    <nav>
+        <div class="nav-cont">
+         <img src="../images/CASA SCHOOL(1).png" alt="logo"  class="logo"  />
+         <div class="dropdown">
+         <img src="../images/photo-profil-avatar-homme-illustration-vectorielle_268834-538.avif" alt="profil" width="50px" height="50px" class="profil" />
+         <div>
+            <h3 class="disconnect">Déconnexion</h3>
+         </div>
+        </div>
+            
+          </div>
+        </nav>
+    <main>
     <div class="container">
         <div class="title">
             <h1>Ajouter</h1>
@@ -15,34 +28,42 @@
     <div >
     <h1>fomateur</h1> 
     <select class="nameFotmateur">
-        <option value="houssam">houssam</option>
-        <option value="hamid">hamid</option>
     </select>
+    <p class="errNameProf"></p>
     </div>
     <div>
     <h1>Bootcam</h1> 
     <select class="bootcam">
+        <option value="0">Bootcam</option>
         <option value="MERN">MERN</option>
         <option value="Angular">Angular</option>
     </select>
+    <p class="errNameBoot"></p>
     </div>
     <div>
         <h1>titre</h1> 
-        <input type="text" class="titre">
+        <input type="text" class="titre" placeholder="titre">
+        <p class="errTitre"></p>
     </div>
     <div>
         <h1>brief</h1> 
-        <input type="text" class="brief">
+        <input type="text" class="brief" placeholder="brief">
+        <p class="errBrief"></p>
     </div>   
     <div>
         <h1>la difficulté rencontreé</h1> 
-        <textarea type="text" class="diffuclte"></textarea>
+        <textarea type="text" class="diffuclte" placeholder="difficulté"></textarea>
+        <p class="errDifficult"></p>
     </div> 
    </div>
     <div class="btn">
     <button class="add">Ajouter</button>
     </div>
    </div>
+</main>
+<footer>
+    <h3>Copyright 2024 © CasaSchool.com - Tous droits réservés.</h3>
+ </footer>
     <script src="../javascript/addBrief.js">
 
     </script>
